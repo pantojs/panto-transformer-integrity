@@ -30,7 +30,7 @@ class IntegrityTransformer extends Transformer {
                     'base64');
                 return sum;
             } catch (e) {
-                panto.log.warn(`IntegrityTransform error in ${filename}: ${e.messsage}`);
+                panto.log.warn(`IntegrityTransform error in ${filename}: ${e.message}`);
             }
         };
 
