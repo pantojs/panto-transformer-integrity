@@ -1,0 +1,33 @@
+{
+  "name": "panto-transformer-integrity",
+  "version": "0.1.0",
+  "description": "Integrity transformer for panto",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pantojs/panto-transformer-integrity.git"
+  },
+  "keywords": [
+    "panto",
+    "integrity",
+    "transformer"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "author": "yanni4night@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pantojs/panto-transformer-integrity/issues"
+  },
+  "homepage": "https://github.com/pantojs/panto-transformer-integrity",
+  "dependencies": {
+    "panto-transformer": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1"
+  }
+}
