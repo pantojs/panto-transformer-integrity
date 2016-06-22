@@ -53,7 +53,7 @@ class IntegrityTransformer extends Transformer {
             panto.log.error(`algorithm must be one of ${algorithms.join()}`);
         }
 
-        if (sum) {
+        if (!sum) {
             return Promise.resolve(file);
         }
 
