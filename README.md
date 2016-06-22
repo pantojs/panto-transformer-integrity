@@ -6,8 +6,13 @@
 ```js
 panto.loadTransformer('integrity');
 
-panto.pick('**/*.{css,js}').pipe(panto.read()).pipe(panto.integrity()).end();
+panto.pick('**/*.{css,js}').pipe(panto.read()).pipe(panto.integrity({
+    algorithm: 'sha256'
+})).end();
 ```
+
+## options
+ - algorithm: string, could be one of "sha256","sha384","sha512", depends on the [openssl](https://www.openssl.org/) installed
 
 [npm-url]: https://npmjs.org/package/panto-transformer-integrity
 [downloads-image]: http://img.shields.io/npm/dm/panto-transformer-integrity.svg
