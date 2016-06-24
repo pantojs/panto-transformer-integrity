@@ -19,9 +19,12 @@ class IntegrityTransformer extends Transformer {
             filename,
             content
         } = file;
+
         const algorithms = ['sha256', 'sha384', 'sha512'];
+
         const {
-            algorithm
+            algorithm,
+            ignoreError
         } = this.options;
 
         const tryOne = algorithm => {
@@ -50,11 +53,15 @@ class IntegrityTransformer extends Transformer {
         } else if (algorithms.indexOf(algorithm) > -1) {
             sum = tryOne(algorithm);
         } else {
-            panto.log.error(`algorithm must be one of ${algorithms.join()}`);
+            panto.log.error(`IntegrityTransform error: algorithm must be one of ${algorithms.join()}`);
         }
 
         if (!sum) {
-            return Promise.resolve(file);
+            if (ignoreError) {
+                return Promise.resolve(file);
+            } else {
+                return Promise.reject(file);
+            }
         }
 
         return Promise.resolve(panto.util.extend(file, {
