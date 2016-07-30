@@ -6,10 +6,10 @@
 ```js
 panto.loadTransformer('integrity');
 
-panto.pick('**/*.{css,js}').pipe(panto.read()).pipe(panto.integrity({
+panto.pick('**/*.{css,js}').read().integrity({
     algorithm: 'sha256',
     ignoreError: true
-})).end();
+});
 ```
 
 ## options
