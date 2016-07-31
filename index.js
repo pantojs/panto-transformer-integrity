@@ -6,8 +6,8 @@
  * 2016-06-22[13:12:07]:revised
  *
  * @author yanni4night@gmail.com
- * @version 1.0.0
- * @since 1.0.0
+ * @version 0.2.4
+ * @since 0.1.0
  */
 'use strict';
 const Transformer = require('panto-transformer');
@@ -48,7 +48,7 @@ class IntegrityTransformer extends Transformer {
 
         let sum;
 
-        if (panto.util.isUndefined(algorithm)) {
+        if (panto._.isUndefined(algorithm)) {
             sum = tryN();
         } else if (algorithms.indexOf(algorithm) > -1) {
             sum = tryOne(algorithm);
@@ -64,7 +64,7 @@ class IntegrityTransformer extends Transformer {
             }
         }
 
-        return Promise.resolve(panto.util.extend(file, {
+        return Promise.resolve(panto._.extend(file, {
             integrity: sum
         }));
     }
